@@ -1,0 +1,29 @@
+import kotlin.Int;
+
+CREATE TABLE BoardSQ (
+    id INTEGER AS Int PRIMARY KEY NOT NULL,
+    time INTEGER AS Int NOT NULL,
+    sort INTEGER AS Int NOT NULL,
+    name TEXT NOT NULL
+);
+
+selectBySortAsc:
+SELECT *
+FROM BoardSQ
+ORDER BY sort ASC, id ASC;
+
+insert:
+INSERT INTO BoardSQ
+VALUES ?;
+
+updateById:
+UPDATE BoardSQ
+SET time = ?, sort = ?, name = ?
+WHERE id = ?;
+
+deleteById:
+DELETE FROM BoardSQ
+WHERE id=?;
+
+truncate:
+DELETE FROM BoardSQ;

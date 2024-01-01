@@ -1,0 +1,30 @@
+import kotlin.Int;
+
+CREATE TABLE CardSQ (
+    id INTEGER AS Int PRIMARY KEY NOT NULL,
+    time INTEGER AS Int NOT NULL,
+    sort INTEGER AS Int NOT NULL,
+    list_id INTEGER AS Int NOT NULL,
+    text TEXT NOT NULL
+);
+
+selectBySortAsc:
+SELECT *
+FROM CardSQ
+ORDER BY sort ASC, id ASC;
+
+insert:
+INSERT INTO CardSQ
+VALUES ?;
+
+updateById:
+UPDATE CardSQ
+SET time = ?, sort = ?, list_id = ?, text = ?
+WHERE id = ?;
+
+deleteById:
+DELETE FROM CardSQ
+WHERE id=?;
+
+truncate:
+DELETE FROM CardSQ;
