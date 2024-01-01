@@ -1,0 +1,13 @@
+.idea/
+.DS_Store
+
+/.gradle/
+/build/
+
+/tmp
+
+/shared/build/
+
+/jvm_app/build/
+/jvm_app/neverdo.db
+
