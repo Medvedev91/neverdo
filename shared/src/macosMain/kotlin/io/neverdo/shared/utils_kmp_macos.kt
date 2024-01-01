@@ -12,7 +12,7 @@ import kotlin.experimental.ExperimentalNativeApi
 actual val isDevEnvironment: Boolean = Platform.isDebugBinary
 
 fun initKmpMacos() {
-    // ~/Library/Containers/io.neverdo.macos/Data/Library/Application\ Support/databases
+    // ~/Library/Containers/io.neverdo.app/Data/Library/Application\ Support/databases
     val dbName = if (isDevEnvironment) "$DB_NAME.dev" else DB_NAME
     initKmp(createNativeDriver(dbName, NeverdoDB.Schema))
 }
