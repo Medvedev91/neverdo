@@ -1,0 +1,2 @@
+-keep class org.sqlite.** { *; }
+-dontwarn org.slf4j.**
