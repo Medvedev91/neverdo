@@ -89,6 +89,7 @@
 				2C7938ED2B43E41900EB953E /* Assets.xcassets */,
 				2C7938F22B43E41900EB953E /* neverdo.entitlements */,
 				318214441623AF75C8F65BF2 /* MacosApp.swift */,
+				31821FD231024DF13C0340A0 /* AppIcon.appiconset */,
 			);
 			path = neverdo;
 			sourceTree = "<group>";
@@ -99,6 +100,14 @@
 				2C7938F02B43E41900EB953E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		31821FD231024DF13C0340A0 /* AppIcon.appiconset */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AppIcon.appiconset;
+			path = Assets.xcassets/AppIcon.appiconset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
