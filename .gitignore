@@ -11,3 +11,5 @@
 /jvm_app/build/
 /jvm_app/neverdo.db
 
+/apple_apps/neverdo.xcodeproj/xcuserdata/
+/apple_apps/neverdo.xcodeproj/project.xcworkspace/xcuserdata/
