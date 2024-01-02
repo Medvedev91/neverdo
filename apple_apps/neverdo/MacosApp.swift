@@ -2,7 +2,7 @@ import SwiftUI
 import shared
 
 @main
-struct NeverdoApp: App {
+struct MacosApp: App {
     
     @State private var vm = AppVM()
 
