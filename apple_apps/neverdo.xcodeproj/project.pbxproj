@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0B96782B43F588008037A9 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B96772B43F588008037A9 /* BoardView.swift */; };
+		2C0B967A2B43F59E008037A9 /* TextField__VMState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B96792B43F59E008037A9 /* TextField__VMState.swift */; };
+		2C0B96822B43F604008037A9 /* MacosAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B96812B43F604008037A9 /* MacosAppDelegate.swift */; };
 		2C7938EA2B43E41800EB953E /* NeverdoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7938E92B43E41800EB953E /* NeverdoApp.swift */; };
 		2C7938EC2B43E41800EB953E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7938EB2B43E41800EB953E /* ContentView.swift */; };
 		2C7938EE2B43E41900EB953E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7938ED2B43E41900EB953E /* Assets.xcassets */; };
 		2C7938F12B43E41900EB953E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7938F02B43E41900EB953E /* Preview Assets.xcassets */; };
 		2C7938F92B43E84000EB953E /* atm_apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7938F82B43E84000EB953E /* atm_apple.swift */; };
+		3182134EE181D90E4D035098 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182115117BD83DF7EE1C1B9 /* MainView.swift */; };
+		3182158896B530F78F513A3E /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318212463BE721B33E719941 /* ListView.swift */; };
+		3182179F586A5A8B1E02CE12 /* ListFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182170A4FAFB7A8D2769B69 /* ListFormView.swift */; };
+		31821E6FBD2ACD0356A6589F /* CardFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182157E577B8406D79D39E6 /* CardFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0B96772B43F588008037A9 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		2C0B96792B43F59E008037A9 /* TextField__VMState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField__VMState.swift; sourceTree = "<group>"; };
+		2C0B96812B43F604008037A9 /* MacosAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacosAppDelegate.swift; sourceTree = "<group>"; };
 		2C7938E62B43E41800EB953E /* neverdo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = neverdo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7938E92B43E41800EB953E /* NeverdoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverdoApp.swift; sourceTree = "<group>"; };
 		2C7938EB2B43E41800EB953E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -22,6 +32,10 @@
 		2C7938F02B43E41900EB953E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C7938F22B43E41900EB953E /* neverdo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = neverdo.entitlements; sourceTree = "<group>"; };
 		2C7938F82B43E84000EB953E /* atm_apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = atm_apple.swift; sourceTree = "<group>"; };
+		3182115117BD83DF7EE1C1B9 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		318212463BE721B33E719941 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		3182157E577B8406D79D39E6 /* CardFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFormView.swift; sourceTree = "<group>"; };
+		3182170A4FAFB7A8D2769B69 /* ListFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C0B96742B43F558008037A9 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				3182115117BD83DF7EE1C1B9 /* MainView.swift */,
+				2C0B96772B43F588008037A9 /* BoardView.swift */,
+				2C0B96792B43F59E008037A9 /* TextField__VMState.swift */,
+				318212463BE721B33E719941 /* ListView.swift */,
+				3182170A4FAFB7A8D2769B69 /* ListFormView.swift */,
+				3182157E577B8406D79D39E6 /* CardFormView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		2C7938DD2B43E41800EB953E = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +82,10 @@
 		2C7938E82B43E41800EB953E /* neverdo */ = {
 			isa = PBXGroup;
 			children = (
+				2C0B96742B43F558008037A9 /* ui */,
 				2C7938EF2B43E41900EB953E /* Preview Content */,
 				2C7938E92B43E41800EB953E /* NeverdoApp.swift */,
+				2C0B96812B43F604008037A9 /* MacosAppDelegate.swift */,
 				2C7938EB2B43E41800EB953E /* ContentView.swift */,
 				2C7938ED2B43E41900EB953E /* Assets.xcassets */,
 				2C7938F22B43E41900EB953E /* neverdo.entitlements */,
@@ -163,9 +192,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0B967A2B43F59E008037A9 /* TextField__VMState.swift in Sources */,
 				2C7938EC2B43E41800EB953E /* ContentView.swift in Sources */,
 				2C7938F92B43E84000EB953E /* atm_apple.swift in Sources */,
+				2C0B96782B43F588008037A9 /* BoardView.swift in Sources */,
+				2C0B96822B43F604008037A9 /* MacosAppDelegate.swift in Sources */,
 				2C7938EA2B43E41800EB953E /* NeverdoApp.swift in Sources */,
+				3182134EE181D90E4D035098 /* MainView.swift in Sources */,
+				3182158896B530F78F513A3E /* ListView.swift in Sources */,
+				3182179F586A5A8B1E02CE12 /* ListFormView.swift in Sources */,
+				31821E6FBD2ACD0356A6589F /* CardFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +354,7 @@
 					"-framework",
 					shared,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.neverdo.neverdo;
+				PRODUCT_BUNDLE_IDENTIFIER = io.neverdo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -353,7 +389,7 @@
 					"-framework",
 					shared,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.neverdo.neverdo;
+				PRODUCT_BUNDLE_IDENTIFIER = io.neverdo.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
