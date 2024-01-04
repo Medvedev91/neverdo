@@ -84,6 +84,7 @@ struct MainView: View {
                                     .navigationTitle("")
                         }
                     }
+                        .background(.background)
                 }
             )
         }
