@@ -30,7 +30,7 @@ struct ListView: View {
                                 vm.setIsEditFormPresented(isPresented: false)
                             }
                         )
-                                .padding(.all, 12)
+                                .padding(.all, 16)
                     } else {
 
                         Button(state.list.name) {
@@ -39,13 +39,13 @@ struct ListView: View {
                                 .foregroundColor(.primary)
                                 .buttonStyle(.borderless)
                                 .padding(.vertical, 12)
-                                .padding(.horizontal, 12)
+                                .padding(.horizontal, 16)
                                 .font(.system(size: 18, weight: .bold))
 
                         Spacer()
                     }
                 }
-                    .padding(.top, 8)
+                        .padding(.top, 8)
 
                 ScrollView(.vertical, showsIndicators: false) {
 
@@ -63,7 +63,7 @@ struct ListView: View {
                                 }
                             )
                                     .padding(.bottom, 12)
-                                    .padding(.horizontal, 12)
+                                    .padding(.horizontal, 16)
                         } else {
                             Button(
                                 action: {
@@ -71,8 +71,8 @@ struct ListView: View {
                                 },
                                 label: {
                                     Text(card.card.text)
-                                            .padding(.all, 8)
-                                            .padding(.horizontal, 4)
+                                            .padding(.all, 4)
+                                            .padding(.horizontal, 12)
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .background(.background) // trick to full width clickable
                                 }
@@ -81,10 +81,9 @@ struct ListView: View {
                         }
 
                         Divider()
-                                .padding(.leading, 12)
+                                .padding(.leading, 16)
                     }
                 }
-                        .padding(.bottom, 12)
 
                 CardFormView(
                     card: nil,
@@ -96,7 +95,6 @@ struct ListView: View {
                         .padding(.horizontal, 12)
             }
                     .frame(width: 280)
-                    .padding(.leading, 8)
 
             VStack {
             }
