@@ -96,7 +96,13 @@ struct ListView: View {
                         .padding(.horizontal, 12)
             }
                     .frame(width: 280)
-                    .padding(.horizontal, 8)
+                    .padding(.leading, 8)
+
+            VStack {
+            }
+                    .frame(width: 1)
+                    .frame(maxHeight: .infinity)
+                    .background(.quaternary)
         }
     }
 }
