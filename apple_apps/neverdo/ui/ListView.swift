@@ -38,7 +38,8 @@ struct ListView: View {
                         }
                                 .foregroundColor(.primary)
                                 .buttonStyle(.borderless)
-                                .padding(.vertical, 12)
+                                .padding(.vertical, 14)
+                                .padding(.bottom, 2)
                                 .padding(.horizontal, 16)
                                 .font(.system(size: 18, weight: .bold))
 
