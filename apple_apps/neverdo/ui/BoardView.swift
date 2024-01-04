@@ -72,8 +72,8 @@ private struct BoardLists: View {
 
                         Spacer()
                     }
-                            .padding(.top, 8)
-                            .padding(.leading, 10)
+                            .padding(.top, 16)
+                            .padding(.leading, 16)
                 }
             }
         }
