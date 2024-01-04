@@ -13,87 +13,89 @@ struct ListView: View {
 
     var body: some View {
 
-        VMView(vm: vm, stack: .VStack()) { state in
+        VMView(vm: vm, stack: .HStack()) { state in
 
-            HStack {
+            VStack {
 
-                if state.isEditFormPresented {
-                    ListFormView(
-                        listDb: state.list,
-                        boardDb: state.board,
-                        onCancel: {
-                            vm.setIsEditFormPresented(isPresented: false)
-                        },
-                        onSave: {
-                            vm.setIsEditFormPresented(isPresented: false)
-                        }
-                    )
-                            .padding(.all, 12)
-                } else {
+                HStack {
 
-                    Button(state.list.name) {
-                        vm.setIsEditFormPresented(isPresented: true)
-                    }
-                            .foregroundColor(.primary)
-                            .buttonStyle(.borderless)
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 12)
-                            .font(.system(size: 16, weight: .bold))
-
-                    Spacer()
-                }
-            }
-
-            ScrollView(.vertical, showsIndicators: false) {
-
-                ForEach(state.cardsUI, id: \.card.id) { card in
-
-                    if card.isEditable {
-                        CardFormView(
-                            card: card.card,
-                            listToAdd: state.list,
+                    if state.isEditFormPresented {
+                        ListFormView(
+                            listDb: state.list,
+                            boardDb: state.board,
                             onCancel: {
-                                vm.setEditableCard(cardUI: nil)
+                                vm.setIsEditFormPresented(isPresented: false)
                             },
                             onSave: {
-                                vm.setEditableCard(cardUI: nil)
+                                vm.setIsEditFormPresented(isPresented: false)
                             }
                         )
-                                .padding(.bottom, 12)
-                                .padding(.horizontal, 12)
+                                .padding(.all, 12)
                     } else {
-                        Button(
-                            action: {
-                                vm.setEditableCard(cardUI: card)
-                            },
-                            label: {
-                                Text(card.card.text)
-                                        .padding(.all, 8)
-                                        .padding(.horizontal, 4)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        .background(.background) // trick to full width clickable
-                            }
-                        )
-                                .buttonStyle(.plain)
+
+                        Button(state.list.name) {
+                            vm.setIsEditFormPresented(isPresented: true)
+                        }
+                                .foregroundColor(.primary)
+                                .buttonStyle(.borderless)
+                                .padding(.vertical, 12)
+                                .padding(.horizontal, 12)
+                                .font(.system(size: 16, weight: .bold))
+
+                        Spacer()
                     }
-
-                    Divider()
-                            .padding(.leading, 12)
                 }
-            }
-                    .padding(.bottom, 12)
 
-            CardFormView(
-                card: nil,
-                listToAdd: state.list,
-                onCancel: {},
-                onSave: {}
-            )
-                    .padding(.bottom, 12)
-                    .padding(.horizontal, 12)
+                ScrollView(.vertical, showsIndicators: false) {
+
+                    ForEach(state.cardsUI, id: \.card.id) { card in
+
+                        if card.isEditable {
+                            CardFormView(
+                                card: card.card,
+                                listToAdd: state.list,
+                                onCancel: {
+                                    vm.setEditableCard(cardUI: nil)
+                                },
+                                onSave: {
+                                    vm.setEditableCard(cardUI: nil)
+                                }
+                            )
+                                    .padding(.bottom, 12)
+                                    .padding(.horizontal, 12)
+                        } else {
+                            Button(
+                                action: {
+                                    vm.setEditableCard(cardUI: card)
+                                },
+                                label: {
+                                    Text(card.card.text)
+                                            .padding(.all, 8)
+                                            .padding(.horizontal, 4)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .background(.background) // trick to full width clickable
+                                }
+                            )
+                                    .buttonStyle(.plain)
+                        }
+
+                        Divider()
+                                .padding(.leading, 12)
+                    }
+                }
+                        .padding(.bottom, 12)
+
+                CardFormView(
+                    card: nil,
+                    listToAdd: state.list,
+                    onCancel: {},
+                    onSave: {}
+                )
+                        .padding(.bottom, 12)
+                        .padding(.horizontal, 12)
+            }
+                    .frame(width: 280)
+                    .padding(.horizontal, 8)
         }
-                .frame(width: 280)
-                .background(squircleShape.fill(.background))
-                .padding(.horizontal, 8)
     }
 }
