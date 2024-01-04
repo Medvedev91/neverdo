@@ -40,11 +40,12 @@ struct ListView: View {
                                 .buttonStyle(.borderless)
                                 .padding(.vertical, 12)
                                 .padding(.horizontal, 12)
-                                .font(.system(size: 16, weight: .bold))
+                                .font(.system(size: 18, weight: .bold))
 
                         Spacer()
                     }
                 }
+                    .padding(.top, 8)
 
                 ScrollView(.vertical, showsIndicators: false) {
 
