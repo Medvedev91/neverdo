@@ -75,7 +75,6 @@ private struct BoardLists: View {
                             .padding(.top, 8)
                             .padding(.leading, 10)
                 }
-                        .padding(.vertical, 12)
             }
         }
                 .toolbar {
