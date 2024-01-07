@@ -18,6 +18,7 @@
 		318214D0A59DF51F79254AEB /* MacosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318214441623AF75C8F65BF2 /* MacosApp.swift */; };
 		3182158896B530F78F513A3E /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318212463BE721B33E719941 /* ListView.swift */; };
 		3182179F586A5A8B1E02CE12 /* ListFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182170A4FAFB7A8D2769B69 /* ListFormView.swift */; };
+		31821B1851BEC7DCB3F8054B /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31821C4E54D78864087C9D76 /* TextFieldCustom.swift */; };
 		31821E6FBD2ACD0356A6589F /* CardFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182157E577B8406D79D39E6 /* CardFormView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		318214441623AF75C8F65BF2 /* MacosApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacosApp.swift; sourceTree = "<group>"; };
 		3182157E577B8406D79D39E6 /* CardFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFormView.swift; sourceTree = "<group>"; };
 		3182170A4FAFB7A8D2769B69 /* ListFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFormView.swift; sourceTree = "<group>"; };
+		31821C4E54D78864087C9D76 /* TextFieldCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				318212463BE721B33E719941 /* ListView.swift */,
 				3182170A4FAFB7A8D2769B69 /* ListFormView.swift */,
 				3182157E577B8406D79D39E6 /* CardFormView.swift */,
+				31821C4E54D78864087C9D76 /* TextFieldCustom.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				3182179F586A5A8B1E02CE12 /* ListFormView.swift in Sources */,
 				31821E6FBD2ACD0356A6589F /* CardFormView.swift in Sources */,
 				318214D0A59DF51F79254AEB /* MacosApp.swift in Sources */,
+				31821B1851BEC7DCB3F8054B /* TextFieldCustom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
