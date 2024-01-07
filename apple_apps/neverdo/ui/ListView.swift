@@ -86,14 +86,7 @@ struct ListView: View {
                     }
                 }
 
-                CardFormView(
-                    card: nil,
-                    listToAdd: state.list,
-                    onCancel: {},
-                    onSave: {}
-                )
-                        .padding(.bottom, 12)
-                        .padding(.horizontal, 12)
+                NewCardForm(listVM: vm)
             }
                     .frame(width: 280)
 
@@ -102,6 +95,48 @@ struct ListView: View {
                     .frame(width: 1)
                     .frame(maxHeight: .infinity)
                     .background(.quaternary)
+        }
+    }
+}
+
+private struct NewCardForm: View {
+
+    let listVM: ListVM
+
+    @State private var text: String = ""
+    @FocusState private var isFocused: Bool
+
+    var body: some View {
+
+        VStack {
+
+            Divider()
+
+            TextFieldCustom(
+                text: $text,
+                setupTextField: { textField in
+                    textField.placeholderString = "Text"
+                    textField.backgroundColor = .clear
+                    textField.isBordered = false
+                    textField.focusRingType = .none
+                },
+                onSubmit: {
+                    listVM.addCard(
+                        text: text,
+                        onSuccess: {
+                            text = ""
+                        }
+                    )
+                }
+            )
+                    .padding(.top, 12)
+                    .padding(.bottom, 12)
+                    .padding(.horizontal, 12)
+                    .background(.background) // trick for onTapGesture()
+                    .onTapGesture {
+                        isFocused = true
+                    }
+                    .focused($isFocused)
         }
     }
 }
