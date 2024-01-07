@@ -2,6 +2,7 @@ package io.neverdo.shared.vm
 
 import io.neverdo.shared.db.CardDb
 import io.neverdo.shared.db.ListDb
+import io.neverdo.shared.launchExDefault
 import io.neverdo.shared.onEachExIn
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
@@ -48,5 +49,18 @@ class ListVM(
 
     fun setEditableCard(cardUI: CardUI?) {
         state.update { it.copy(editableCardId = cardUI?.card?.id) }
+    }
+
+    fun addCard(
+        text: String,
+        onSuccess: () -> Unit,
+    ) {
+        launchExDefault {
+            CardDb.insertWithValidation(
+                text = text,
+                list = state.value.list,
+            )
+            onSuccess()
+        }
     }
 }
