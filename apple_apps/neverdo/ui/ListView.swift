@@ -112,13 +112,9 @@ private struct NewCardForm: View {
 
             Divider()
 
-            TextFieldCustom(
+            TextArea(
                 text: $text,
-                setupTextField: { textField in
-                    textField.placeholderString = "Text"
-                    textField.backgroundColor = .clear
-                    textField.isBordered = false
-                    textField.focusRingType = .none
+                setupTextView: { textField in
                 },
                 onSubmit: {
                     listVM.addCard(
