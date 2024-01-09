@@ -363,7 +363,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2024.01.08;
+				MARKETING_VERSION = "2024-01-08";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -400,7 +400,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 2024.01.08;
+				MARKETING_VERSION = "2024-01-08";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
