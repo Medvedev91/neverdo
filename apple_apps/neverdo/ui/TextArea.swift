@@ -2,9 +2,8 @@ import SwiftUI
 
 struct TextArea: NSViewRepresentable {
 
-    @Binding var text: String
     let setupTextView: (NSTextView) -> Void
-    let onSubmit: () -> Void
+    let onSubmit: (NSTextView) -> Void
 
     func makeNSView(
         context: NSViewRepresentableContext<TextArea>
@@ -12,7 +11,6 @@ struct TextArea: NSViewRepresentable {
         let textView = MyTextView(frame: .zero)
         textView.parent = self
         setupTextView(textView)
-        textView.string = text
         return textView
     }
 
@@ -20,7 +18,6 @@ struct TextArea: NSViewRepresentable {
         _ textView: NSTextView,
         context: NSViewRepresentableContext<TextArea>
     ) {
-        textView.string = text
     }
 }
 
@@ -58,14 +55,13 @@ private class MyTextView: NSTextView {
         if event.keyCode == 36 {
             let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
             if (modifiers.isEmpty) {
-                parent.onSubmit()
+                parent.onSubmit(self)
                 return
             } else if modifiers == [.command] || modifiers == [.shift] || modifiers == [.option] || modifiers == [.control] {
                 if let pointerIndex = self.selectedRanges.first?.rangeValue.location {
-                    let oldText = self.string
-                    var newText = oldText
+                    var newText = self.string
                     newText.insert("\n", at: newText.index(newText.startIndex, offsetBy: pointerIndex))
-                    parent.text = newText
+                    self.string = newText
                     self.setSelectedRange(NSMakeRange(pointerIndex + 1, 0))
                     return
                 } else {
@@ -93,10 +89,6 @@ private class MyTextView: NSTextView {
     }
 
     override func didChangeText() {
-        // Async to fix "update while update" log
-        DispatchQueue.main.async {
-            self.parent.text = self.string
-        }
         updateHeight()
         super.didChangeText()
     }

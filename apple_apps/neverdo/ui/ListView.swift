@@ -103,7 +103,6 @@ private struct NewCardForm: View {
 
     let listVM: ListVM
 
-    @State private var text: String = ""
     @FocusState private var isFocused: Bool
 
     var body: some View {
@@ -113,14 +112,15 @@ private struct NewCardForm: View {
             Divider()
 
             TextArea(
-                text: $text,
                 setupTextView: { textField in
                 },
-                onSubmit: {
+                onSubmit: { textField in
                     listVM.addCard(
-                        text: text,
+                        text: textField.string,
                         onSuccess: {
-                            text = ""
+                            DispatchQueue.main.async {
+                                textField.string = ""
+                            }
                         }
                     )
                 }
