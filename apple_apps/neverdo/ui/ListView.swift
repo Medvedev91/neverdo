@@ -50,13 +50,13 @@ struct ListView: View {
 
                 ScrollView(.vertical, showsIndicators: false) {
 
-                    ForEach(state.cardsUI, id: \.card.id) { card in
+                    ForEach(state.cardsUi, id: \.card.id) { cardUi in
 
-                        if card.isEditable {
+                        if cardUi.isEditable {
                             CardFormView(
-                                cardUi: card,
+                                cardUi: cardUi,
                                 onClose: {
-                                    vm.setEditableCard(cardUI: nil)
+                                    vm.setEditableCard(cardUi: nil)
                                 }
                             )
                             .padding(.bottom, 12)
@@ -64,10 +64,10 @@ struct ListView: View {
                         } else {
                             Button(
                                 action: {
-                                    vm.setEditableCard(cardUI: card)
+                                    vm.setEditableCard(cardUi: cardUi)
                                 },
                                 label: {
-                                    Text(card.card.text)
+                                    Text(cardUi.card.text)
                                         .padding(.all, 4)
                                         .padding(.horizontal, 12)
                                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -98,7 +98,7 @@ struct ListView: View {
 
 private struct CardFormView: View {
 
-    let cardUi: ListVM.CardUI
+    let cardUi: ListVM.CardUi
     let onClose: () -> Void
 
     @FocusState private var isFormFocused: Bool

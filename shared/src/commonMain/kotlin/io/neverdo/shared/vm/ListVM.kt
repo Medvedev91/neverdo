@@ -12,7 +12,7 @@ class ListVM(
     private val list: ListDb,
 ) : __VM<ListVM.State>() {
 
-    data class CardUI(
+    data class CardUi(
         val card: CardDb,
         val isEditable: Boolean,
     ) {
@@ -44,7 +44,9 @@ class ListVM(
         val isEditFormPresented: Boolean,
     ) {
         val board = list.getBoardDI()
-        val cardsUI = cards.map { card -> CardUI(card, card.id == editableCardId) }
+        val cardsUi: List<CardUi> = cards.map { card ->
+            CardUi(card, card.id == editableCardId)
+        }
     }
 
     override val state = MutableStateFlow(
@@ -68,8 +70,8 @@ class ListVM(
         state.update { it.copy(isEditFormPresented = isPresented) }
     }
 
-    fun setEditableCard(cardUI: CardUI?) {
-        state.update { it.copy(editableCardId = cardUI?.card?.id) }
+    fun setEditableCard(cardUi: CardUi?) {
+        state.update { it.copy(editableCardId = cardUi?.card?.id) }
     }
 
     fun addCard(
