@@ -54,12 +54,8 @@ struct ListView: View {
 
                         if card.isEditable {
                             CardFormView(
-                                card: card.card,
-                                listToAdd: state.list,
-                                onCancel: {
-                                    vm.setEditableCard(cardUI: nil)
-                                },
-                                onSave: {
+                                cardUi: card,
+                                onClose: {
                                     vm.setEditableCard(cardUI: nil)
                                 }
                             )
@@ -95,6 +91,53 @@ struct ListView: View {
             .frame(width: 1)
             .frame(maxHeight: .infinity)
             .background(.quaternary)
+        }
+    }
+}
+
+
+private struct CardFormView: View {
+
+    let cardUi: ListVM.CardUI
+    let onClose: () -> Void
+
+    @FocusState private var isFormFocused: Bool
+
+    var body: some View {
+
+        VStack {
+
+            TextArea(
+                setupTextView: { textField in
+                    textField.string = cardUi.initEditText
+                    isFormFocused = true
+                },
+                onSubmit: { textField in
+                    cardUi.updateText(
+                        text: textField.string,
+                        onSuccess: {
+                            onClose()
+                        }
+                    )
+                }
+            )
+            .focused($isFormFocused)
+
+            HStack(spacing: 10) {
+
+                Button("Cancel") {
+                    onClose()
+                }
+                .buttonStyle(.link)
+                .foregroundColor(.secondary)
+
+                Button("Delete Card") {
+                    cardUi.delete()
+                }
+
+                Spacer()
+            }
+            .padding(.top, 16)
         }
     }
 }
