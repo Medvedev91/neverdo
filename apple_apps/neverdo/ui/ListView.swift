@@ -30,23 +30,23 @@ struct ListView: View {
                                 vm.setIsEditFormPresented(isPresented: false)
                             }
                         )
-                                .padding(.all, 16)
+                        .padding(.all, 16)
                     } else {
 
                         Button(state.list.name) {
                             vm.setIsEditFormPresented(isPresented: true)
                         }
-                                .foregroundColor(.primary)
-                                .buttonStyle(.borderless)
-                                .padding(.vertical, 14)
-                                .padding(.bottom, 2)
-                                .padding(.horizontal, 16)
-                                .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.primary)
+                        .buttonStyle(.borderless)
+                        .padding(.vertical, 14)
+                        .padding(.bottom, 2)
+                        .padding(.horizontal, 16)
+                        .font(.system(size: 18, weight: .bold))
 
                         Spacer()
                     }
                 }
-                        .padding(.top, 8)
+                .padding(.top, 8)
 
                 ScrollView(.vertical, showsIndicators: false) {
 
@@ -63,8 +63,8 @@ struct ListView: View {
                                     vm.setEditableCard(cardUI: nil)
                                 }
                             )
-                                    .padding(.bottom, 12)
-                                    .padding(.horizontal, 16)
+                            .padding(.bottom, 12)
+                            .padding(.horizontal, 16)
                         } else {
                             Button(
                                 action: {
@@ -72,29 +72,29 @@ struct ListView: View {
                                 },
                                 label: {
                                     Text(card.card.text)
-                                            .padding(.all, 4)
-                                            .padding(.horizontal, 12)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                            .background(.background) // trick to full width clickable
+                                        .padding(.all, 4)
+                                        .padding(.horizontal, 12)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .background(.background) // trick to full width clickable
                                 }
                             )
-                                    .buttonStyle(.plain)
+                            .buttonStyle(.plain)
                         }
 
                         Divider()
-                                .padding(.leading, 16)
+                            .padding(.leading, 16)
                     }
                 }
 
                 NewCardForm(listVM: vm)
             }
-                    .frame(width: 280)
+            .frame(width: 280)
 
             VStack {
             }
-                    .frame(width: 1)
-                    .frame(maxHeight: .infinity)
-                    .background(.quaternary)
+            .frame(width: 1)
+            .frame(maxHeight: .infinity)
+            .background(.quaternary)
         }
     }
 }
@@ -125,14 +125,14 @@ private struct NewCardForm: View {
                     )
                 }
             )
-                    .padding(.top, 12)
-                    .padding(.bottom, 12)
-                    .padding(.horizontal, 12)
-                    .background(.background) // trick for onTapGesture()
-                    .onTapGesture {
-                        isFocused = true
-                    }
-                    .focused($isFocused)
+            .padding(.top, 12)
+            .padding(.bottom, 12)
+            .padding(.horizontal, 12)
+            .background(.background) // trick for onTapGesture()
+            .onTapGesture {
+                isFocused = true
+            }
+            .focused($isFocused)
         }
     }
 }
