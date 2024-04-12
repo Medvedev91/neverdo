@@ -60,7 +60,7 @@ struct ListView: View {
                                 }
                             )
                             .padding(.bottom, 12)
-                            .padding(.horizontal, 16)
+                            .padding(.horizontal, 12)
                         } else {
                             Button(
                                 action: {
@@ -138,6 +138,7 @@ private struct CardFormView: View {
                 Spacer()
             }
             .padding(.top, 16)
+            .padding(.horizontal, 4)
         }
     }
 }
