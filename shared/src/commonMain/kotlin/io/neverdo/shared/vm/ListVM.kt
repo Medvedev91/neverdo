@@ -4,6 +4,7 @@ import io.neverdo.shared.db.CardDb
 import io.neverdo.shared.db.ListDb
 import io.neverdo.shared.launchExDefault
 import io.neverdo.shared.onEachExIn
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 
@@ -14,7 +15,27 @@ class ListVM(
     data class CardUI(
         val card: CardDb,
         val isEditable: Boolean,
-    )
+    ) {
+
+        val initEditText = card.text
+
+        fun updateText(
+            text: String,
+            onSuccess: () -> Unit,
+        ) {
+            launchExDefault {
+                card.updateByIdWithValidation(text)
+                delay(20L) // To update ui before close
+                onSuccess()
+            }
+        }
+
+        fun delete() {
+            launchExDefault {
+                card.backupable__delete()
+            }
+        }
+    }
 
     data class State(
         val list: ListDb,
