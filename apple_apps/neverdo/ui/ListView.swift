@@ -59,8 +59,8 @@ struct ListView: View {
                                     vm.setEditableCard(cardUi: nil)
                                 }
                             )
-                            .padding(.bottom, 12)
-                            .padding(.horizontal, 12)
+                            .padding(.top, 4)
+                            .padding(.bottom, 4)
                         } else {
                             Button(
                                 action: {
@@ -107,8 +107,9 @@ private struct CardFormView: View {
         VStack {
 
             TextArea(
-                setupTextView: { textField in
-                    textField.string = cardUi.initEditText
+                setupTextView: { nsTextView in
+                    nsTextView.string = cardUi.initEditText
+                    prepTextAreaTextStyle(nsTextView: nsTextView)
                     isFormFocused = true
                 },
                 onSubmit: { textField in
@@ -136,9 +137,10 @@ private struct CardFormView: View {
 
                 Spacer()
             }
-            .padding(.top, 16)
-            .padding(.horizontal, 4)
+            .padding(.top, 12)
+            .padding(.horizontal, 5)
         }
+        .padding(.horizontal, 11)
     }
 }
 
@@ -155,7 +157,8 @@ private struct NewCardForm: View {
             Divider()
 
             TextArea(
-                setupTextView: { textField in
+                setupTextView: { nsTextView in
+                    prepTextAreaTextStyle(nsTextView: nsTextView)
                 },
                 onSubmit: { textField in
                     listVM.addCard(
@@ -178,4 +181,10 @@ private struct NewCardForm: View {
             .focused($isFocused)
         }
     }
+}
+
+private func prepTextAreaTextStyle(
+    nsTextView: NSTextView
+) {
+    nsTextView.font = NSFont.systemFont(ofSize: 13)
 }
