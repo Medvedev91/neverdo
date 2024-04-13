@@ -51,6 +51,10 @@ private class MyTextView: NSTextView {
         heightConstraint?.isActive = true
     }
 
+    override func paste(_ sender: Any?) {
+        pasteAsPlainText(sender)
+    }
+
     override func keyDown(with event: NSEvent) {
         if event.keyCode == 36 {
             let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
