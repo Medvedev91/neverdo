@@ -119,6 +119,9 @@ private struct CardFormView: View {
                             onClose()
                         }
                     )
+                },
+                onEscPressed: {
+                    onClose()
                 }
             )
             .focused($isFormFocused)
@@ -169,7 +172,8 @@ private struct NewCardForm: View {
                             }
                         }
                     )
-                }
+                },
+                onEscPressed: {}
             )
             .padding(.top, 12)
             .padding(.bottom, 12)

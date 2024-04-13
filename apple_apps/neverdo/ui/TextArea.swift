@@ -4,6 +4,7 @@ struct TextArea: NSViewRepresentable {
 
     let setupTextView: (NSTextView) -> Void
     let onSubmit: (NSTextView) -> Void
+    let onEscPressed: () -> Void
 
     func makeNSView(
         context: NSViewRepresentableContext<TextArea>
@@ -58,6 +59,14 @@ private class MyTextView: NSTextView {
     }
 
     override func keyDown(with event: NSEvent) {
+
+        // Esc
+        if event.keyCode == 53 {
+            parent.onEscPressed()
+            return
+        }
+
+        // Return
         if event.keyCode == 36 {
             let modifiers = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
             if (modifiers.isEmpty) {
@@ -76,6 +85,7 @@ private class MyTextView: NSTextView {
                 }
             }
         }
+
         super.keyDown(with: event)
     }
 
