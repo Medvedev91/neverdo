@@ -95,7 +95,6 @@ struct ListView: View {
     }
 }
 
-
 private struct CardFormView: View {
 
     let cardUi: ListVM.CardUi
