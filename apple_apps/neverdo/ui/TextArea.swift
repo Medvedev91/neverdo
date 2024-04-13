@@ -32,7 +32,9 @@ private class MyTextView: NSTextView {
 
     private var contentSize: CGSize {
         get {
-            guard let layoutManager = layoutManager, let textContainer = textContainer else {
+            guard let layoutManager = layoutManager,
+                  let textContainer = textContainer
+            else {
                 return .zero
             }
             layoutManager.ensureLayout(for: textContainer)
