@@ -3,7 +3,7 @@ import shared
 
 @main
 struct MacosApp: App {
-    
+
     @State private var vm = AppVM()
 
     @NSApplicationDelegateAdaptor(MacosAppDelegate.self) private var appDelegate
@@ -19,12 +19,12 @@ struct MacosApp: App {
                     MainView()
                         .onAppear() {
                             // trick preventing escape to close full screen overrides everywhere
-                            NSEvent.addLocalMonitorForEvents(matching: .keyDown) { (aEvent) -> NSEvent? in
-                                if aEvent.keyCode == 53 {
-                                    return nil
-                                }
-                                return aEvent
-                            }
+//                            NSEvent.addLocalMonitorForEvents(matching: .keyDown) { (aEvent) -> NSEvent? in
+//                                if aEvent.keyCode == 53 {
+//                                    return nil
+//                                }
+//                                return aEvent
+//                            }
                         }
                 }
             }

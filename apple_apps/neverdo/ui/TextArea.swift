@@ -58,8 +58,7 @@ private class MyTextView: NSTextView {
         pasteAsPlainText(sender)
     }
 
-    // trick not keyDown() because of NSEvent.addLocalMonitorForEvent(.keyDown)
-    override func keyUp(with event: NSEvent) {
+    override func keyDown(with event: NSEvent) {
 
         // Esc
         if event.keyCode == 53 {
