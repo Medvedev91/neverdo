@@ -49,36 +49,39 @@ struct ListView: View {
                 .padding(.top, 8)
 
                 ScrollView(.vertical, showsIndicators: false) {
-
-                    ForEach(state.cardsUi, id: \.card.id) { cardUi in
-
-                        if cardUi.isEditable {
-                            CardFormView(
-                                cardUi: cardUi,
-                                onClose: {
-                                    vm.setEditableCard(cardUi: nil)
-                                }
-                            )
-                            .padding(.top, 4)
-                            .padding(.bottom, 4)
-                        } else {
-                            Button(
-                                action: {
-                                    vm.setEditableCard(cardUi: cardUi)
-                                },
-                                label: {
-                                    Text(cardUi.card.text)
-                                        .padding(.all, 4)
-                                        .padding(.horizontal, 12)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        .background(.background) // trick to full width clickable
-                                }
-                            )
-                            .buttonStyle(.plain)
+                    
+                    LazyVStack {
+                        
+                        ForEach(state.cardsUi, id: \.card.id) { cardUi in
+                            
+                            if cardUi.isEditable {
+                                CardFormView(
+                                    cardUi: cardUi,
+                                    onClose: {
+                                        vm.setEditableCard(cardUi: nil)
+                                    }
+                                )
+                                .padding(.top, 4)
+                                .padding(.bottom, 4)
+                            } else {
+                                Button(
+                                    action: {
+                                        vm.setEditableCard(cardUi: cardUi)
+                                    },
+                                    label: {
+                                        Text(cardUi.card.text)
+                                            .padding(.all, 4)
+                                            .padding(.horizontal, 12)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .background(.background) // trick to full width clickable
+                                    }
+                                )
+                                .buttonStyle(.plain)
+                            }
+                            
+                            Divider()
+                                .padding(.leading, 16)
                         }
-
-                        Divider()
-                            .padding(.leading, 16)
                     }
                 }
 
