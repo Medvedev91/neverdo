@@ -23,7 +23,7 @@ struct BoardView: View {
                     BoardLists(vm: vm, state: state)
                 }
             }
-                    .navigationTitle(state.board.name)
+            .navigationTitle(state.board.name)
         }
     }
 }
@@ -67,30 +67,30 @@ private struct BoardLists: View {
                                     Image(systemName: "plus")
                                 }
                             )
-                                    .buttonStyle(.borderless)
+                            .buttonStyle(.borderless)
                         }
 
                         Spacer()
                     }
-                            .padding(.top, 16)
-                            .padding(.leading, 16)
+                    .padding(.top, 16)
+                    .padding(.leading, 16)
                 }
             }
         }
-                .toolbar {
+        .toolbar {
 
-                    HStack {
+            HStack {
 
-                        Button(
-                            action: {
-                                vm.setIsFormBoardVisible(isVisible: true)
-                            },
-                            label: {
-                                Label("Edit Board", systemImage: "pencil")
-                            }
-                        )
+                Button(
+                    action: {
+                        vm.setIsFormBoardVisible(isVisible: true)
+                    },
+                    label: {
+                        Label("Edit Board", systemImage: "pencil")
                     }
-                }
+                )
+            }
+        }
     }
 }
 
@@ -124,19 +124,19 @@ private struct BoardForm: View {
 
             Spacer()
         }
-                .toolbar {
+        .toolbar {
 
-                    HStack {
+            HStack {
 
-                        Button(
-                            action: {
-                                vm.setIsFormBoardVisible(isVisible: false)
-                            },
-                            label: {
-                                Text("Back")
-                            }
-                        )
+                Button(
+                    action: {
+                        vm.setIsFormBoardVisible(isVisible: false)
+                    },
+                    label: {
+                        Text("Back")
                     }
-                }
+                )
+            }
+        }
     }
 }
