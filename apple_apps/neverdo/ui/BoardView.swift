@@ -39,7 +39,7 @@ private struct BoardLists: View {
 
             ScrollView(.horizontal) {
 
-                LazyHStack(spacing: 0) {
+                HStack {
 
                     ForEach(state.lists, id: \.id) { listDb in
                         ListView(listDb: listDb)
